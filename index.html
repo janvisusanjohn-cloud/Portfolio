@@ -1,49 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janvi John | Portfolio</title>
+
+<style>
+body { margin:0; font-family: Arial, sans-serif; background:#f5f0e6; }
+header { background:#800000; color:white; padding:15px; text-align:center; }
+nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+section { padding:40px; }
+.container { max-width:1000px; margin:auto; }
+img { width:150px; border-radius:50%; margin-top:10px; }
+.btn { background:#800000; color:white; padding:10px 20px; border:none; cursor:pointer; border-radius:5px; }
+.card { background:white; padding:20px; margin:10px 0; border-left:5px solid #800000; border-radius:5px; }
+footer { background:#800000; color:white; text-align:center; padding:10px; }
+input { padding:10px; margin:5px; width:90%; border-radius:5px; border:1px solid #ccc; }
+</style>
+
 </head>
+
 <body>
 
-  <header>
-    <h1>Janvi John</h1>
-    <p>Web Developer | Student</p>
-  </header>
+<!-- Login Page -->
+<div id="loginPage" class="container">
+<h2>Login to View Portfolio</h2>
+<input type="email" id="email" placeholder="Enter Email"><br>
+<input type="text" id="phone" placeholder="Enter Phone Number"><br>
+<button class="btn" onclick="login()">Login</button>
+</div>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<!-- Portfolio -->
+<div id="portfolio" style="display:none;">
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a student passionate about web development and coding.</p>
-  </section>
+<header>
+<h1>Janvi John</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>A personal portfolio using HTML & CSS.</p>
-    </div>
-    <div class="card">
-      <h3>Form Validation</h3>
-      <p>Simple form validation using JavaScript.</p>
-    </div>
-  </section>
+<section id="about" class="container">
+<h2>About Me</h2>
+<img src="https://via.placeholder.com/150" alt="Profile Photo">
+<p>Hello! I am Janvi John, a passionate web developer with interest in creating modern and user-friendly websites. I enjoy learning new technologies and building creative projects.</p>
+</section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form onsubmit="return validateForm()">
-      <input type="text" id="name" placeholder="Your Name"><br>
-      <input type="email" id="email" placeholder="Your Email"><br>
-      <textarea id="message" placeholder="Your Message"></textarea><br>
-      <button type="submit">Send</button>
-    </form>
-    <p id="error"></p>
-  </section>
+<section id="skills" class="container">
+<h2>Skills</h2>
+<div class="card">HTML</div>
+<div class="card">CSS</div>
+<div class="card">JavaScript</div>
+<div class="card">Basic Linux & Networking</div>
+</section>
 
-  <footer>
+<section id="projects" class="container">
+<h2>Projects</h2>
+<div class="card">Portfolio Website</div>
+<div class="card">Form Validation Project</div>
+<div class="card">Shell Programming Tasks</div>
+</section>
+
+<section id="contact" class="container">
+<h2>Contact</h2>
+<p>Email: janvi@email.com</p>
+<p>Phone: 9876543210</p>
+<p>LinkedIn: 
+<a href="https://linkedin.com/in/janvi-susan-john-" target="_blank">
+View Profile
+</a>
+</p>
+</section>
+
+<footer>
+<p>© 2026 Janvi John | All Rights Reserved</p>
+</footer>
+
+</div>
+
+<script>
+function login(){
+let email = document.getElementById('email').value;
+let phone = document.getElementById('phone').value;
+
+if(email.includes('@') && phone.length >= 10){
+alert("Login successful!");
+document.getElementById('loginPage').style.display='none';
+document.getElementById('portfolio').style.display='block';
+}else{
+alert('Please enter a valid email and phone number');
+}
+}
+</script>
+
+</body>
+</html>
